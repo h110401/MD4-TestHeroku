@@ -19,20 +19,20 @@ public class Security8Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Security8Application.class, args);
 	}
-	@Bean
-	CommandLineRunner run(IRoleService roleService, IUserService userService) {
-		return args -> {
-			roleService.save(new Role(null, ADMIN));
-			roleService.save(new Role(null, PM));
-			roleService.save(new Role(null, USER));
-
-			userService.save(new User(null, "admin", "admin", "admin@gmail.com", "1234", new HashSet<>()));
-			userService.save(new User(null, "manager", "manager", "manager@gmail.com", "1234", new HashSet<>()));
-			userService.save(new User(null, "user", "user", "user@gmail.com", "1234", new HashSet<>()));
-
-			userService.addRoleToUser("admin", ADMIN);
-			userService.addRoleToUser("manager", PM);
-			userService.addRoleToUser("user", USER);
-		};
-	}
+//	@Bean
+//	CommandLineRunner run(IRoleService roleService, IUserService userService) {
+//		return args -> {
+//			roleService.save(new Role(null, ADMIN));
+//			roleService.save(new Role(null, PM));
+//			roleService.save(new Role(null, USER));
+//
+//			userService.save(new User(null, "admin", "admin", "admin@gmail.com", "1234", new HashSet<>()));
+//			userService.save(new User(null, "manager", "manager", "manager@gmail.com", "1234", new HashSet<>()));
+//			userService.save(new User(null, "user", "user", "user@gmail.com", "1234", new HashSet<>()));
+//
+//			userService.addRoleToUser("admin", ADMIN);
+//			userService.addRoleToUser("manager", PM);
+//			userService.addRoleToUser("user", USER);
+//		};
+//	}
 }
